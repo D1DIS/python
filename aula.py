@@ -1,3 +1,5 @@
+from math import sin, cos, tan, radians
+
 nome = input ('qual o seu nome?')
 print ('é um prazer conhecer voce ', nome)
 
@@ -68,13 +70,22 @@ H = (CO**2 + CA**2) ** (1/2)
 
 print ('a hipotenusa vai valer {}'.format(H))
 
-import math
+
 
 CO = float(input('digite o valor do cateto: '))
 CA = float(input('digite o valor do adjacente: '))
 H = math.hypot(CO , CA)
 print ('a hipotenusa vai ser {:.2f}'.format(H))
 
-print ('ola mundo')
+
+angulo = float(input('digite o angulo que se voce deseja: '))
+seno = sin(radians(angulo))
+print('o angulo de {} tem o seno de {:.2f}'.format(angulo, seno))
+cosseno = cos(radians(angulo))
+print ('o angulo de {} tem o cosseno de {:.2f}'.format(angulo,cosseno))
+tangente = tan(radians(angulo))
+print('o angulo de {} tem a tangente de {:.2f}'.format(angulo,tangente))
+
+
 
 
