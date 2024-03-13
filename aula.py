@@ -75,6 +75,6 @@ CA = float(input('digite o valor do adjacente: '))
 H = math.hypot(CO , CA)
 print ('a hipotenusa vai ser {:.2f}'.format(H))
 
-
+print ('ola mundo')
 
 

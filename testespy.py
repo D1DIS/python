@@ -1,5 +1,5 @@
-'''nome = input ('qual o seu nome? ')
-print ('é um prazer conhecer voce ', nome)'''
+nome = input ('qual o seu nome? ')
+print ('é um prazer conhecer voce ', nome)
 
 '''larg = float(input('largura da parede: '))
 altura = float(input('altura da parede: '))
@@ -75,5 +75,5 @@ CA = float(input('digite o valor do adjacente: '))
 H = math.hypot(CO , CA)
 print ('a hipotenusa vai ser {:.2f}'.format(H))
 
-print (' eduardo lactose')
+
 
