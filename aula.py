@@ -86,6 +86,14 @@ print ('o angulo de {} tem o cosseno de {:.2f}'.format(angulo,cosseno))
 tangente = tan(radians(angulo))
 print('o angulo de {} tem a tangente de {:.2f}'.format(angulo,tangente))
 
+import random
 
+a1 = input ('digite o nome do primeiro aluno: ')
+a2 = input('digite o nome do segundo aluno: ')
+a3 = input('digite o nome do terceiro aluno: ')
+a4 = input('digite o nome do quarto aluno: ')
 
+lista = [a1, a2, a3, a4]
 
+escolhido =  random.choice(lista)
+print ('o aluno escolhido foi {}'.format(escolhido))
