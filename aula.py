@@ -1,6 +1,6 @@
 from math import sin, cos, tan, radians
 
-nome = input ('qual o seu nome?')
+'''nome = input ('qual o seu nome?')
 print ('é um prazer conhecer voce ', nome)
 
 larg = float(input('largura da parede: '))
@@ -105,5 +105,14 @@ a4 = input('digite o nome do quarto aluno: ')
 
 random.shuffle(lista)
 print('a ordem de apresentação sera: ')
-print (lista)
+print (lista)'''
+
+frase = 'curso em video python'
+print(frase.count('O'))
+
+
+
+
+
+
 

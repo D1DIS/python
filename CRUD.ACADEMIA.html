@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - Agendamento de Treinos</title>
+    <link rel="stylesheet" href="">
+    <style>
+        /* Estilos simples para facilitar a visualização */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>CRUD - Agendamento de Treinos</h1>
+
+    <!-- Formulário para criar um novo agendamento -->
+    <h2>Novo Agendamento</h2>
+    <form id="form">
+        <label for="cliente">Nome do Cliente:</label>
+        <input type="text" id="cliente" required>
+        <label for="data">Data do Treino:</label>
+        <input type="date" id="data" required>
+        <button type="submit">Agendar Treino</button>
+    </form>
+
+    <!-- Tabela para exibir os agendamentos existentes -->
+    <h2>Agendamentos</h2>
+    <table id="agendamentos">
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Data</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <!-- Aqui serão adicionados os agendamentos dinamicamente -->
+        </tbody>
+    </table>
+
+    <script>
+        // Array para armazenar os agendamentos (simulando um banco de dados)
+        let agendamentos = [];
+
+        // Função para exibir os agendamentos na tabela
+        function exibirAgendamentos() {
+            const tbody = document.getElementById('tbody');
+            tbody.innerHTML = '';
+            agendamentos.forEach(agendamento => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${agendamento.cliente}</td>
+                    <td>${agendamento.data}</td>
+                    <td>
+                        <button onclick="editarAgendamento(${agendamento.id})">Editar</button>
+                        <button onclick="excluirAgendamento(${agendamento.id})">Excluir</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Função para adicionar um novo agendamento
+        function adicionarAgendamento(cliente, data) {
+            const novoAgendamento = {
+                id: Date.now(),
+                cliente,
+                data
+            };
+            agendamentos.push(novoAgendamento);
+            exibirAgendamentos();
+        }
+
+        // Função para editar um agendamento
+        function editarAgendamento(id) {
+            // Aqui você pode implementar a lógica para editar um agendamento
+            alert('Editar agendamento com ID ' + id);
+        }
+
+        // Função para excluir um agendamento
+        function excluirAgendamento(id) {
+            agendamentos = agendamentos.filter(agendamento => agendamento.id !== id);
+            exibirAgendamentos();
+        }
+
+        // Event listener para o formulário de agendamento
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const cliente = document.getElementById('cliente').value;
+            const data = document.getElementById('data').value;
+            adicionarAgendamento(cliente, data);
+            this.reset();
+        });
+
+        // Exibir os agendamentos iniciais (se houver)
+        exibirAgendamentos();
+    </script>
+</body>
+</html>
